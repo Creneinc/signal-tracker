@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "signal-tracker"
+version = "0.1.0"
+description = "Open-source prediction tracking & accuracy scoring framework. Track predictions, score accuracy, build leaderboards."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "Crene, Inc.", email = "dev@crene.com"}]
+keywords = ["predictions", "forecasting", "accuracy", "leaderboard", "track-record", "accountability", "signal", "intelligence"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+Homepage = "https://crene.com"
+Repository = "https://github.com/crene/signal-tracker"
+
+[project.optional-dependencies]
+llm = ["openai>=1.0", "anthropic>=0.20"]
+all = ["openai>=1.0", "anthropic>=0.20"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
